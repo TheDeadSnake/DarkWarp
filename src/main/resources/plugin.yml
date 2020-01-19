@@ -1,0 +1,33 @@
+name: DarkWarp
+version: ${project.version}
+main: de.hotmail.darktobi17.darkwarp.DarkWarp
+api-version: "1.14"
+prefix: DWarp
+authors: [darktobi1797, TheDeadSnake]
+description: A Plugin to warp to pre-defined places.
+commands:
+  warp:
+    description: Create/remove a new warp locations
+    aliases: [w]
+    permission: dwarp.warp
+permissions:
+  dwarp.warp:
+    description: Allows a player to warp to a warp location.
+    default: true
+  dwarp.list:
+    description: Get a List of all available warp locations.
+    default: true
+  dwarp.create:
+    description: Allows a player to create warp locations.
+    default: op
+  dwarp.remove:
+    description: Allows a player to remove warp locations.
+    default: op
+  dwarp.*:
+    description: Allows a player to use the plugin completely.
+    default: op
+    children:
+      dwarp.create: true
+      dwarp.remove: true
+      dwarp.warp: true
+      dwarp.list: true
